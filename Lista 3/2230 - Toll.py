@@ -1,10 +1,10 @@
 class Graph():
     def __init__(self, n_vertices):
-        self.linhas = list() # cria um vetor de vertices
+        self.linhas = [] # cria um vetor de vertices
         self.n_vertices = n_vertices
         for i in range(n_vertices):
             # popula o vetor de vertices com dict de arestas deles (atualmente vazia)
-            colunas = dict() 
+            colunas = {} 
             self.linhas.append(colunas)
     
     def adicionarEstrada(self, cidade1, cidade2, custo = 1):
@@ -17,7 +17,7 @@ class Graph():
         inicio = inicio - 1
         set.add(inicio)
         while distancia > 0:
-            lista = list()
+            lista = []
             for item in set:
                 for vertice in self.linhas[item]:
                     lista.append(vertice)

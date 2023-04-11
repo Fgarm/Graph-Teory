@@ -1,12 +1,12 @@
 class Graph():
 
     def __init__(self, n_vertices, idades):
-        self.funcionarios = list()
-        self.funcoes = list()
+        self.funcionarios = []
+        self.funcoes = []
         for i in range(n_vertices):
-            dados_do_funct = list()
-            dados_da_func = list()
-            gerentes = dict()
+            dados_do_funct = []
+            dados_da_func = []
+            gerentes = {}
             self.funcionarios.append(dados_do_funct)
             self.funcionarios[i].append(idades[i])
             self.funcionarios[i].append(i) # colocando que o funcionário i está na posição i
@@ -40,11 +40,11 @@ class Graph():
         #como a idade maxima de um empregado é 100, 101 é nosso infinito
         idade_min = 101
         gerentes_passados = set()
-        fila_de_busca = list()
+        fila_de_busca = []
         for gerentes in self.funcoes[self.funcionarios[empregado][1]][1]:
             fila_de_busca.append(gerentes)
         while(len(fila_de_busca)>0):
-            fila_de_busca_temp = list()
+            fila_de_busca_temp = []
             for gerente in fila_de_busca:
                 if gerente not in gerentes_passados:
                     gerentes_passados.add(gerente)

@@ -1,12 +1,12 @@
 class Graph():
     def __init__(self, n_vertices):
-        self.linhas = list() # cria um vetor de vertices
+        self.linhas = [] # cria um vetor de vertices
         self.n_vertices = n_vertices
-        self.vertices = dict()
+        self.vertices = {}
         self.vert_com_nome = 0
         for i in range(n_vertices):
             # popula o vetor de vertices com dict de arestas deles (atualmente vazia)
-            colunas = dict() 
+            colunas = {} 
             self.linhas.append(colunas)
 
         #acessar um vertice: 
@@ -25,11 +25,11 @@ class Graph():
         vertice_inicio = self.vertices[inicio]
         vertice_fim = self.vertices[fim]
         visitados = set()
-        fila_de_busca = list()
+        fila_de_busca = []
         distancia: int = 0
         fila_de_busca.append(vertice_inicio)
         while(vertice_fim not in fila_de_busca):
-            fila_de_busca_temp = list()
+            fila_de_busca_temp = []
             for entrada in fila_de_busca:
                     for vertice in self.linhas[entrada]:
                         if vertice not in visitados:

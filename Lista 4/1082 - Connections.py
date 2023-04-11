@@ -3,9 +3,9 @@ LETRA_A_IN_ASCII = 97
 
 class Graph():
     def __init__(self, num_vertices) -> None:
-        self.vertices = list()
+        self.vertices = []
         for i in range(num_vertices):
-            colunas = dict()
+            colunas = {}
             self.vertices.append(colunas)
         
     def __convert_letter_into_index(self, letter):
@@ -22,19 +22,19 @@ class Graph():
     
     def componentes(self):
         quantidade = 0
-        componentes = list()
+        componentes = []
         ja_passados = set()
 
         for vertice in range(len(self.vertices)):
-            fila_de_busca = list()
-            componente = list()
+            fila_de_busca = []
+            componente = []
             if vertice not in ja_passados:
                 quantidade += 1
                 componente.append(self.__convert_index_into_letter(vertice))
                 fila_de_busca.append(vertice)
                 ja_passados.add(vertice)
             while fila_de_busca:
-                fila_de_busca_temp = list()
+                fila_de_busca_temp = []
                 for entrada in fila_de_busca:
                     for component in self.vertices[entrada]:
                         if component not in ja_passados:
