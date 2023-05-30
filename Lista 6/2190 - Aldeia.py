@@ -90,7 +90,10 @@ nova_linha = ''
 while True:
         # uma taba é uma aldeia
         # conex_poss são as conexões possíveis
-        tabas , conex_poss = [int(entrada) for entrada in input().split()]
+        try:
+            tabas , conex_poss = [int(entrada) for entrada in input().split()]
+        except ValueError:
+            break
         if tabas == 0:
             break
         else:
@@ -104,7 +107,7 @@ while True:
         rede = Graph(tabas)
         #iniciar um grafo com tabas vertices
         for i in range(conex_poss):
-            # taba1, taba2, peso: int = [int(entrada) for entrada in input().split()]
+            # taba1, taba2, peso= [int(entrada) for entrada in input().split()]
             rede.addAresta(*[int(entrada) for entrada in input().split()])
         rede.arvoreMinima()
             
